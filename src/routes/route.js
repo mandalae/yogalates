@@ -10,12 +10,29 @@ module.exports = function($stateProvider, $urlRouterProvider) {
       templateUrl: "views/main.html",
       controller: 'MainController'
     })
-    .state('test', {
-      url: "/test",
-      templateUrl: "views/test.html",
-      controller: function($scope) {
-        $scope.items = ["A", "List", "Of", "Items"];
-      }
+    .state('news', {
+      url: "/news",
+      templateUrl: "views/news.html"
+    })
+    .state('classes', {
+      url: "/classes",
+      templateUrl: "views/classes.html"
+    })
+    .state('travels', {
+      url: "/travels",
+      templateUrl: "views/travels.html"
+    })
+    .state('signup', {
+      url: "/signup",
+      templateUrl: "views/signup.html"
+    })
+    .state('contact', {
+      url: "/contact",
+      templateUrl: "views/contact.html"
+    })
+    .state('education', {
+      url: "/education",
+      templateUrl: "views/education.html"
     });
 
 }

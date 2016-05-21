@@ -1,12 +1,3 @@
-module.exports = function($scope, $http) {
-    $scope.query = '';
+module.exports = function($scope) {
 
-    $scope.doSearch = function(){
-    	$http({
-    		method: 'GET',
-    		url: '/api/ingredient/' + $scope.query
-    	}).then(function(result){
-    		$scope.data = result;
-    	});
-    }
 }
