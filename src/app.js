@@ -1,4 +1,6 @@
 require('angular');
+var $ = jQuery = require('jquery');
+require('bootstrap');
 require('angular-ui-router');
 
 var AppController = require('./controllers/App');
@@ -11,4 +13,3 @@ app.controller('AppController', ['$scope', AppController]);
 app.controller('MainController', ['$scope', '$http', MainController]);
 
 app.config(router);
-// require('bootstrap');
