@@ -32,7 +32,8 @@ module.exports = function($stateProvider, $urlRouterProvider) {
     })
     .state('education', {
       url: "/education",
-      templateUrl: "views/education.html"
+      templateUrl: "views/education.html",
+      controller: 'EducationController'
     });
 
 }

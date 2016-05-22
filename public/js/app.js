@@ -47606,22 +47606,118 @@ require('bootstrap');
 require('angular-ui-router');
 
 var AppController = require('./controllers/App');
-var MainController = require('./controllers/Main');
+var EducationController = require('./controllers/EducationController');
 var router = require('./routes/route');
 
 var app = angular.module('app', ['ui.router']);
 
 app.controller('AppController', ['$scope', AppController]);
-app.controller('MainController', ['$scope', '$http', MainController]);
+app.controller('EducationController', ['$scope', EducationController]);
 
 app.config(router);
 
-},{"./controllers/App":19,"./controllers/Main":20,"./routes/route":21,"angular":3,"angular-ui-router":1,"bootstrap":4,"jquery":17}],19:[function(require,module,exports){
+},{"./controllers/App":19,"./controllers/EducationController":20,"./routes/route":21,"angular":3,"angular-ui-router":1,"bootstrap":4,"jquery":17}],19:[function(require,module,exports){
 module.exports = function($scope) {
     $scope.message = 'Two birds killed with one stone!'
 }
 },{}],20:[function(require,module,exports){
 module.exports = function($scope) {
+
+    $scope.courses = [
+    {
+        'description': 'Kinesologikursus',
+        'year': 2006
+    },
+    {
+        'description': 'Chiball Method Indroduktionskursus 12 timer',
+        'year': 2007
+    },
+    {
+        'description': 'Energitræning med henblik på kræftpatienter',
+        'year': 2008
+    },
+    {
+        'description': 'Jichu Gong begynder kursus Medicinsk Qi Gong',
+        'year': 2008
+    },
+    {
+        'description': 'Dong Gong kursus Medicinsk Qi Gong',
+        'year': 2011
+    },
+    {
+        'description': 'Senior Qi Gong Medicinsk Qi Gong',
+        'year': 2011
+    },
+    {
+        'description': 'Gymfit Balance',
+        'year': 2012
+    },
+    {
+        'description': 'MK Motion DGI',
+        'year': 2012
+    },
+    {
+        'description': 'Fem Element Qi Gong Medicinsk Qi Gong',
+        'year': 2013
+    },
+    {
+        'description': 'DGI Styrk din krop',
+        'year': 2013
+    },
+    {
+        'description': 'Gymfit Seniors kursus DGI',
+        'year': 2013
+    },
+    {
+        'description': 'Gymfit Dance`n Fun kursus DGI',
+        'year': 2013
+    },
+    {
+        'description': 'DGI Multikursus',
+        'year': 2013
+    },
+    {
+        'description': 'Bassinlivredderprøve dybde 3,5 m',
+        'year': '2014 Tages 1 gang om året' 
+    },
+    {
+        'description': 'Den elastiske bækkenbund Den Intelligente Krop',
+        'year': 2014
+    },
+    {
+        'description': 'Psoas kursus Den Intelligente Krop',
+        'year': 2014
+    },
+    {
+        'description': 'Aqua Fitness inspirationskursus DGI',
+        'year': 2014
+    },
+    {
+        'description': 'Wai Qi kursus Medicinsk Qi Gong',
+        'year': 2014
+    },
+    {
+        'description': 'TKM grundkursus i Traditionel Kinesisk Medicin',
+        'year': 2014
+    },
+    {
+        'description': 'Tuina- kinesisk massage i Traditionel Kinesisk Medicin',
+        'year': 2014
+    },
+    {
+        'description': 'Aqua Konference',
+        'year': 2014
+    },
+    {
+        'description': 'Idræt for børn og unge med autisme og ADHD',
+        'year': 2014
+    },
+    {
+        'description': 'Grundfærdigheder, øvelser og aktiviteter DGI Svømning',
+        'year': 2015
+    }
+    ];
+
 
 }
 },{}],21:[function(require,module,exports){
@@ -47659,7 +47755,8 @@ module.exports = function($stateProvider, $urlRouterProvider) {
     })
     .state('education', {
       url: "/education",
-      templateUrl: "views/education.html"
+      templateUrl: "views/education.html",
+      controller: 'EducationController'
     });
 
 }

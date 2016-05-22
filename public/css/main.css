@@ -6842,3 +6842,28 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+table.table {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+html {
+  height: 100%;
+}
+body {
+  background: url('/img/background.jpg') 0 0 no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+}
+body .overlay {
+  background: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  overflow-y: auto;
+}
+body .content {
+  color: #fff;
+  text-shadow: 1px 1px #999;
+}

@@ -22,6 +22,7 @@
     "browserify": "^13.0.0",
     "chai": "^3.5.0",
     "chai-spies": "^0.7.1",
+    "chai-things": "^0.2.0",
     "grunt": "^0.4.5",
     "grunt-browserify": "^5.0.0",
     "grunt-contrib-less": "^1.2.0",
