@@ -52,54 +52,13 @@
 
     <!-- Main component for a primary marketing message or call to action -->
       <!-- <div class="content" ui-view></div> -->
-      <div id="home" class="content">
-        <div class="home-text">
-          <h1>Lidt om mig</h1>
-
-          <p>Jeg hedder June Skaaning og er fra 1961. Jer er bosiddende nord for Randers i en lille landsby.</p>
-
-          <p>Jeg er uddannet som kontorassistent tilbage i 1981 og har mange kurser i den forbindelse.</p>
-
-          <p>I 2006 begyndte jeg mit nye liv, hvor jeg selv ville bestemme over min arbejdstid og det jeg havde lyst til. Det blev og er en dejlig rejse, med mange uddannelser og kurser indenfor bevægelse, se nærmere under uddannelser og kurser.</p>
-
-          <p>Jeg vil stadig udvikle mig via kurser og uddannelser og hvem ved, hvad det bringer med sig.</p>
-
-          <p>Se mere på de næste sider om hvad og hvor jeg er i dag.</p>
-        </div>
-      </div>
-
+      <div id="home" class="content" ng-include="'views/main.html'"></div>
       <div id="news" class="content"></div>
       <div id="classes" class="content"></div>
-      <div id="education" ng-controller="EducationController" class="content">
-        <table class="table">
-            <tbody>
-                <tr ng-repeat="item in courses">
-                    <td>{{item.description}}</td>
-                    <td>{{item.year}}</td>
-                </tr>
-            </tbody>
-        </table>
-      </div>
+      <div id="education" ng-controller="EducationController" class="content" ng-include="'views/education.html'"></div>
       <div id="travels" class="content"></div>
       <div id="signup" class="content"></div>
-      <div id="contact" class="content">
-        <div class="contact-text">
-          June Skaaning
-          <br />
-          Kondrupvej 3
-          <br />
-          Enslev
-          <br />
-          8983 Gjerlev
-          <br /><br />
-          Tlf: 2673 2571
-          <br />
-          Mail: <a href="mailto:june@yogalates.dk">june@yogalates.dk</a>
-          <br />
-          Facebook: <a href="https://www.facebook.com/june.skaaning">juneskaaning</a>
-        </div>
-
-      </div>
+      <div id="contact" class="content" ng-include="'views/contact.html'"></div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="/js/app.js"></script>
