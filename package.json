@@ -16,6 +16,7 @@
     "bootstrap": "^3.3.6",
     "express": "^4.13.4",
     "jquery": "^2.2.1",
+    "jquery-easing": "0.0.1",
     "less": "^2.6.1"
   },
   "devDependencies": {

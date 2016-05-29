@@ -6843,27 +6843,87 @@ button.close {
 }
 /*# sourceMappingURL=bootstrap.css.map */
 
-table.table {
-  background: rgba(0, 0, 0, 0.3);
-}
 
 html {
   height: 100%;
 }
-body {
-  background: url('/img/background.jpg') 0 0 no-repeat;
-  background-attachment: fixed;
-  height: 100%;
-  width: 100%;
+@font-face {
+  font-family: 'Josefin Slab';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Josefin Slab SemiBold'), local('JosefinSlab-SemiBold'), url(https://fonts.gstatic.com/s/josefinslab/v6/NbE6ykYuM2IyEwxQxOIi2PBf3Xtc57ojmY2ox2Xv8Go.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
-body .overlay {
-  background: rgba(0, 0, 0, 0.3);
+body {
+  background: #F3FAB6;
   height: 100%;
   width: 100%;
-  position: fixed;
-  overflow-y: auto;
+  font-family: 'Josefin Slab', serif;
 }
 body .content {
   color: #fff;
-  text-shadow: 1px 1px #999;
+  text-shadow: 1px 1px #DDD;
+  background: #A8CD1B;
+  padding: 20px;
+  border-top: #005A31 1px solid;
+  padding-top: 60px;
+  min-height: 100%;
+  font-size: 15px;
+}
+body .navbar-default {
+  background-color: rgba(243, 250, 182, 0.5);
+  border-color: #005A31;
+  position: fixed;
+  padding: 0px;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
+body .navbar-default .navbar-nav > .active > a,
+body .navbar-default .navbar-nav > .active > a:hover,
+body .navbar-default .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: #A8CD1B;
+}
+body .navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+body .navbar .navbar-collapse {
+  text-align: center;
+}
+body #home {
+  background: url('/img/home-bg.jpg') 0 0;
+  background-size: cover;
+  color: #005A31;
+}
+body #home .home-text {
+  width: 50%;
+}
+body #contact {
+  background: url('/img/contact-bg.jpg') 0 0;
+  background-size: cover;
+  color: #005A31;
+}
+body #contact .contact-text {
+  width: 50%;
+  float: right;
+}
+body #education {
+  background: url('/img/education-bg.jpg') 0 0;
+  background-size: cover;
+  color: #F3FAB6;
+}
+body #education .table {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px #333;
+}
+body #travels {
+  background: url('/img/travels-bg.jpg') 0 0;
+  background-size: cover;
+  color: #F3FAB6;
+}
+body #travels .travel-text {
+  width: 50%;
 }

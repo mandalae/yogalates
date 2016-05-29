@@ -11,50 +11,95 @@
 
     <title>Yogalates</title>
 
+    <link href="/css/scrolling-nav.css" rel="stylesheet" />
+
     <link href="/css/main.css" rel="stylesheet" />
 
     <meta name="google-site-verification" content="uOKJf1A-_L-gPleaRiGOdSOp_UtiA1pQcSJS7ZWrfRE" />
   </head>
 
   <body ng-controller="AppController">
-    <div class="overlay">
 
-      <div class="container">
+    <div class="container">
 
-        <!-- Static navbar -->
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#" ui-sref="root">Yogalates</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li ui-sref-active="active"><a href="#" ui-sref="root">Home</a></li>
-                <li ui-sref-active="active"><a href="#" ui-sref="news">Nyheder</a></li>
-                <li ui-sref-active="active"><a href="#" ui-sref="classes">Hold</a></li>
-                <li ui-sref-active="active"><a href="#" ui-sref="education">Uddannelser</a></li>
-                <li ui-sref-active="active"><a href="#" ui-sref="travels">Rejser</a></li>
-                <li ui-sref-active="active"><a href="#" ui-sref="signup">Tilmelding</a></li>
-                <li ui-sref-active="active"><a href="#" ui-sref="contact">Kontakt</a></li>
-              </ul>
-              
-            </div><!--/.nav-collapse -->
-          </div><!--/.container-fluid -->
-        </nav>
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="#home" class="page-scroll">Home</a></li>
+              <li><a href="#news" class="page-scroll">Nyheder</a></li>
+              <li><a href="#classes" class="page-scroll">Hold</a></li>
+              <li><a href="#education" class="page-scroll">Uddannelser</a></li>
+              <li><a href="#travels" class="page-scroll">Rejser</a></li>
+              <li><a href="#signup" class="page-scroll">Tilmelding</a></li>
+              <li><a href="#contact" class="page-scroll">Kontakt</a></li>
+            </ul>
+            
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
 
-        <!-- Main component for a primary marketing message or call to action -->
-        <div class="content" ui-view></div>
-        
+    </div> <!-- /container -->
 
-      </div> <!-- /container -->
+    <!-- Main component for a primary marketing message or call to action -->
+      <!-- <div class="content" ui-view></div> -->
+      <div id="home" class="content">
+        <div class="home-text">
+          <h1>Lidt om mig</h1>
 
-    </div>
+          <p>Jeg hedder June Skaaning og er fra 1961. Jer er bosiddende nord for Randers i en lille landsby.</p>
+
+          <p>Jeg er uddannet som kontorassistent tilbage i 1981 og har mange kurser i den forbindelse.</p>
+
+          <p>I 2006 begyndte jeg mit nye liv, hvor jeg selv ville bestemme over min arbejdstid og det jeg havde lyst til. Det blev og er en dejlig rejse, med mange uddannelser og kurser indenfor bevægelse, se nærmere under uddannelser og kurser.</p>
+
+          <p>Jeg vil stadig udvikle mig via kurser og uddannelser og hvem ved, hvad det bringer med sig.</p>
+
+          <p>Se mere på de næste sider om hvad og hvor jeg er i dag.</p>
+        </div>
+      </div>
+
+      <div id="news" class="content"></div>
+      <div id="classes" class="content"></div>
+      <div id="education" ng-controller="EducationController" class="content">
+        <table class="table">
+            <tbody>
+                <tr ng-repeat="item in courses">
+                    <td>{{item.description}}</td>
+                    <td>{{item.year}}</td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+      <div id="travels" class="content"></div>
+      <div id="signup" class="content"></div>
+      <div id="contact" class="content">
+        <div class="contact-text">
+          June Skaaning
+          <br />
+          Kondrupvej 3
+          <br />
+          Enslev
+          <br />
+          8983 Gjerlev
+          <br /><br />
+          Tlf: 2673 2571
+          <br />
+          Mail: <a href="mailto:june@yogalates.dk">june@yogalates.dk</a>
+          <br />
+          Facebook: <a href="https://www.facebook.com/june.skaaning">juneskaaning</a>
+        </div>
+
+      </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="/js/app.js"></script>
