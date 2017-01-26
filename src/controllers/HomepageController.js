@@ -2,9 +2,10 @@ module.exports = function($scope, $http) {
 
     $http({
         "method": "GET",
-        "url": "/api/pages/education"
+        "url": "/api/pages/homepage"
     }).then(function(data){
-        $scope.courses = data.data.document;
+        $scope.data = data.data.document;
+        $scope.headline = data.data.headline;
     }, function(){
         // error
     });

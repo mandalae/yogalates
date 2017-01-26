@@ -9,16 +9,12 @@
     <meta name="author" content="">
     <link rel="icon" href="/yoga.ico">
 
-    <title>Yogalates</title>
-
-    <link href="/css/scrolling-nav.css" rel="stylesheet" />
+    <title>Yogalates - Admin</title>
 
     <link href="/css/main.css" rel="stylesheet" />
-
-    <meta name="google-site-verification" content="uOKJf1A-_L-gPleaRiGOdSOp_UtiA1pQcSJS7ZWrfRE" />
   </head>
 
-  <body ng-controller="AppController">
+  <body>
 
     <div class="container">
 
@@ -35,13 +31,7 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="#home" class="page-scroll">Home</a></li>
-              <li><a href="#news" class="page-scroll">Nyheder</a></li>
-              <li><a href="#classes" class="page-scroll">Hold</a></li>
-              <li><a href="#education" class="page-scroll">Uddannelser</a></li>
-              <li><a href="#travels" class="page-scroll">Rejser</a></li>
-              <li><a href="#signup" class="page-scroll">Tilmelding</a></li>
-              <li><a href="#contact" class="page-scroll">Kontakt</a></li>
+              <li><a href="#home" class="page-scroll">Pages</a></li>
             </ul>
             
           </div><!--/.nav-collapse -->
@@ -50,15 +40,6 @@
 
     </div> <!-- /container -->
 
-    <!-- Main component for a primary marketing message or call to action -->
-      <!-- <div class="content" ui-view></div> -->
-      <div id="home" class="content" ng-controller="HomepageController" ng-include="'views/main.html'"></div>
-      <div id="news" class="content"></div>
-      <div id="classes" class="content"></div>
-      <div id="education" ng-controller="EducationController" class="content" ng-include="'views/education.html'"></div>
-      <div id="travels" class="content"></div>
-      <div id="signup" class="content"></div>
-      <div id="contact" class="content" ng-include="'views/contact.html'"></div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="/js/app.js"></script>

@@ -1,7 +1,7 @@
-var http = require('http');
-var config = require('../config/config.json');
+const page = require('./text');
 
-module.exports = function(req, res){
+module.exports = {
 
-	
-};
+    page: page
+
+}

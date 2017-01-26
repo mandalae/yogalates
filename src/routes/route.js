@@ -8,7 +8,7 @@ module.exports = function($stateProvider, $urlRouterProvider) {
     .state('root', {
       url: "/",
       templateUrl: "views/main.html",
-      controller: 'MainController'
+      controller: 'HomepageController'
     })
     .state('news', {
       url: "/news",
