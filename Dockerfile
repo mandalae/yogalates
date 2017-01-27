@@ -1,3 +1,8 @@
-FROM node:6-onbuild
+FROM node:7
 
-EXPOSE 80
+COPY . /usr/src/app
+WORKDIR /usr/src/app
+
+EXPOSE 3000
+
+CMD ["node", "server.js"]

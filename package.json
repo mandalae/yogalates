@@ -18,7 +18,8 @@
     "express": "^4.13.4",
     "jquery": "^2.2.1",
     "jquery-easing": "0.0.1",
-    "less": "^2.6.1"
+    "less": "^2.6.1",
+    "mongodb": "^2.2.22"
   },
   "devDependencies": {
     "browserify": "^13.0.0",

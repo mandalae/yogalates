@@ -1,7 +1,7 @@
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var ObjectId = require('mongodb').ObjectID;
-var config = require('../../config/config.json');
+var config = require('../config/config.json');
 
 module.exports = function(){
 
