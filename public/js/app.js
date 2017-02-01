@@ -50006,18 +50006,24 @@ module.exports = function($scope) {
     $scope.message = 'Two birds killed with one stone!'
 }
 },{}],22:[function(require,module,exports){
-module.exports = function($scope, $http) {
-
-    $http({
+const fetchPage = $http => {
+    return $http({
         "method": "GET",
         "url": "/api/pages/education"
-    }).then(function(data){
-        $scope.courses = data.data.document;
-    }, function(){
-        // error
     });
-    
 }
+
+module.exports = function($scope, $http) {
+
+    return fetchPage($http).then(function(data){
+        $scope.courses = data.data.document;
+        return $scope;
+    }).catch(function(){
+        // error handling
+    });
+
+}
+
 },{}],23:[function(require,module,exports){
 module.exports = function($scope, $http) {
 
@@ -50030,8 +50036,9 @@ module.exports = function($scope, $http) {
     }, function(){
         // error
     });
-    
+
 }
+
 },{}],24:[function(require,module,exports){
 var $ = require('jquery');
 

@@ -1,5 +1,8 @@
 {
-	"db": {
-		"url": "mongodb://yogalates-db:27017/local"
+	"db-local": {
+		"url": "mongodb://localhost:27017/local"
+	},
+	"db-prod": {
+		"url": "mongodb://"
 	}
 }

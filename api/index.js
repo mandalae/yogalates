@@ -1,7 +1,9 @@
-const page = require('./text');
+const page = require('./page');
+const authenticate = require('./authenticate');
 
 module.exports = {
 
-    page: page
+    page: page,
+    authenticate: authenticate
 
 }

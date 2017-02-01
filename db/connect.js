@@ -1,12 +1,18 @@
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var ObjectId = require('mongodb').ObjectID;
-var config = require('../config/config.json');
 
-module.exports = function(){
+var getDBUrl = () => {
+    var dbUrl = process.env.YOGALATES_DB_URL;
+    if (!dbUrl){
+        dbUrl = 'mongodb://localhost:27017/local';
+    }
+    return dbUrl;
+}
 
+var dbConnect = () => {
     var promise = new Promise((resolve, reject) => {
-        MongoClient.connect(config.db.url, (err, db) => {
+        MongoClient.connect(getDBUrl(), (err, db) => {
             if (err){
                 reject(err);
             }
@@ -15,5 +21,7 @@ module.exports = function(){
     });
 
     return promise;
+}
 
-};
+
+module.exports = dbConnect
