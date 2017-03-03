@@ -6906,6 +6906,16 @@ body #contact .contact-text {
   width: 50%;
   float: right;
 }
+body #courses {
+  background: url('/img/courses-bg.jpg') 0 0;
+  background-size: cover;
+  color: #F3FAB6;
+}
+body #courses .table {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px #333;
+}
 body #education {
   background: url('/img/education-bg.jpg') 0 0;
   background-size: cover;

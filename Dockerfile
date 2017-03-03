@@ -1,5 +1,7 @@
 FROM node:7
 
+ENV YOGALATES_DB_URL yogalates-db
+
 COPY . /usr/src/app
 WORKDIR /usr/src/app
 

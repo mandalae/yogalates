@@ -49988,6 +49988,7 @@ require('jquery-easing');
 require('./modules/scrolling-nav.js')();
 
 var AppController = require('./controllers/App');
+var CourseController = require('./controllers/CourseController');
 var EducationController = require('./controllers/EducationController');
 var HomepageController = require('./controllers/HomepageController');
 var router = require('./routes/route');
@@ -49995,17 +49996,37 @@ var router = require('./routes/route');
 var app = angular.module('app', ['ui.router', 'nl2br-filter']);
 
 app.controller('AppController', ['$scope', AppController]);
+app.controller('CourseController', ['$scope', '$http', CourseController]);
 app.controller('EducationController', ['$scope', '$http', EducationController]);
 app.controller('HomepageController', ['$scope', '$http', HomepageController]);
 
 
 app.config(router);
 
-},{"./controllers/App":21,"./controllers/EducationController":22,"./controllers/HomepageController":23,"./modules/scrolling-nav.js":24,"./routes/route":25,"angular":4,"angular-nl2br-filter":1,"angular-ui-router":2,"bootstrap":5,"jquery":19,"jquery-easing":18}],21:[function(require,module,exports){
+},{"./controllers/App":21,"./controllers/CourseController":22,"./controllers/EducationController":23,"./controllers/HomepageController":24,"./modules/scrolling-nav.js":25,"./routes/route":26,"angular":4,"angular-nl2br-filter":1,"angular-ui-router":2,"bootstrap":5,"jquery":19,"jquery-easing":18}],21:[function(require,module,exports){
 module.exports = function($scope) {
     $scope.message = 'Two birds killed with one stone!'
 }
 },{}],22:[function(require,module,exports){
+const fetchPage = $http => {
+    return $http({
+        "method": "GET",
+        "url": "/api/pages/courses"
+    });
+}
+
+module.exports = function($scope, $http) {
+
+    return fetchPage($http).then(function(data){
+        $scope.courses = data.data.document;
+        return $scope;
+    }).catch(function(){
+        // error handling
+    });
+
+}
+
+},{}],23:[function(require,module,exports){
 const fetchPage = $http => {
     return $http({
         "method": "GET",
@@ -50024,22 +50045,24 @@ module.exports = function($scope, $http) {
 
 }
 
-},{}],23:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 module.exports = function($scope, $http) {
 
-    $http({
+    return $http({
         "method": "GET",
         "url": "/api/pages/homepage"
     }).then(function(data){
         $scope.data = data.data.document;
         $scope.headline = data.data.headline;
+
+        return $scope;
     }, function(){
         // error
     });
 
 }
 
-},{}],24:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 var $ = require('jquery');
 
 module.exports = function(){
@@ -50064,7 +50087,7 @@ module.exports = function(){
     });
 
 }
-},{"jquery":19}],25:[function(require,module,exports){
+},{"jquery":19}],26:[function(require,module,exports){
 module.exports = function($stateProvider, $urlRouterProvider) {
   //
   // For any unmatched url, redirect to /
@@ -50104,4 +50127,4 @@ module.exports = function($stateProvider, $urlRouterProvider) {
     });
 
 }
-},{}]},{},[20,21,22,23,24,25]);
+},{}]},{},[20,21,22,23,24,25,26]);

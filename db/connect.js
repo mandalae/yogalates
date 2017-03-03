@@ -1,16 +1,23 @@
-var MongoClient = require('mongodb').MongoClient;
-var assert = require('assert');
-var ObjectId = require('mongodb').ObjectID;
+const MongoClient = require('mongodb').MongoClient;
+const assert = require('assert');
+const ObjectId = require('mongodb').ObjectID;
 
-var getDBUrl = () => {
-    var dbUrl = process.env.YOGALATES_DB_URL;
-    if (!dbUrl){
-        dbUrl = 'mongodb://localhost:27017/local';
+const getDBUrl = () => {
+    var dbUrl
+    if (process.env.YOGALATES_DB_URL){
+        dbUrl = 'mongodb://web_user:' + process.env.WEB_USER_PW + '@' + process.env.YOGALATES_DB_URL + ':27017/yogalates'
+    } else {
+        dbUrl = 'mongodb://web_user:' + process.env.WEB_USER_PW + '@localhost:27017/yogalates';
     }
+
+    if (!dbUrl){
+        throw new Error('No DB URL found')
+    }
+    
     return dbUrl;
 }
 
-var dbConnect = () => {
+const dbConnect = () => {
     var promise = new Promise((resolve, reject) => {
         MongoClient.connect(getDBUrl(), (err, db) => {
             if (err){
