@@ -37,7 +37,7 @@ module.exports = function(grunt) {
 
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('build', ['mochaTest', 'browserify'])
+  grunt.registerTask('build', ['mochaTest', 'browserify', 'less:dist'])
 
   grunt.registerTask('test', ['mochaTest']);
   // Default task(s).

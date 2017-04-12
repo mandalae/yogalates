@@ -7,7 +7,6 @@ module.exports = function(db, collection, query) {
 		var cursor = db.collection(collection).find(query);
 		   cursor.each(function(err, doc) {
 		      assert.equal(err, null);
-		      db.close();
 
 		      if (doc != null) {
 		         resolve(doc);

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "build": "grunt build && npm start",
-    "test": "nyc ./node_modules/.bin/mocha test/** --reporter spec"
+    "test": "nyc ./node_modules/.bin/mocha test/**/*.spec.js test/**/** --reporter spec"
   },
   "author": "Chris Skaaning <c@rpediem.com>",
   "license": "ISC",
@@ -37,6 +37,8 @@
     "load-grunt-tasks": "^3.4.1",
     "mocha": "^2.4.5",
     "nyc": "^10.1.2",
-    "proxyquire": "^1.7.11"
+    "proxyquire": "^1.7.11",
+    "sinon": "^1.17.7",
+    "sinon-chai": "^2.8.0"
   }
 }

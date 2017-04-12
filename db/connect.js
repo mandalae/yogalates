@@ -2,6 +2,8 @@ const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 const ObjectId = require('mongodb').ObjectID;
 
+var _db;
+
 const getDBUrl = () => {
     var dbUrl
     if (process.env.YOGALATES_DB_URL){
@@ -13,18 +15,23 @@ const getDBUrl = () => {
     if (!dbUrl){
         throw new Error('No DB URL found')
     }
-    
+
     return dbUrl;
 }
 
 const dbConnect = () => {
     var promise = new Promise((resolve, reject) => {
-        MongoClient.connect(getDBUrl(), (err, db) => {
-            if (err){
-                reject(err);
-            }
-            resolve(db);
-        });
+        if (!_db){
+            MongoClient.connect(getDBUrl(), (err, db) => {
+                if (err){
+                    reject(err);
+                }
+                _db = db;
+                resolve(db);
+            });
+        } else {
+            resolve(_db);
+        }
     });
 
     return promise;

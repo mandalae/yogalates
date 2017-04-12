@@ -1,3 +1,4 @@
 node_modules
 results.txt
 .nyc_output
+.DS_store

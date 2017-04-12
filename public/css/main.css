@@ -6897,6 +6897,27 @@ body #home {
 body #home .home-text {
   width: 50%;
 }
+body #classes {
+  background: url('/img/classes-bg.jpg') 0 0;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-shadow: none;
+}
+body #classes td.day_column {
+  width: 20%;
+}
+body #classes td.group_space {
+  width: 100%;
+}
+body #classes td.group_prices {
+  white-space: nowrap;
+  text-align: left;
+  min-width: 400px;
+}
+body #classes td.group_prices ul {
+  list-style: none;
+  margin: 0px;
+}
 body #contact {
   background: url('/img/contact-bg.jpg') 0 0;
   background-size: cover;

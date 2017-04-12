@@ -3,10 +3,19 @@ var api = require('./api');
 
 var app = express();
 
-app.use(express.static('public'));
+// Update the db
+console.log('Updating the database...');
+api.updateDb().then((version) => {
+    console.log('Database updated to version', version);
 
-app.get('/api/pages/:name', api.page);
+    app.use(express.static('public'));
 
-app.use('/kontrolpanel', api.authenticate, express.static('admin'));
+    app.get('/api/pages/:name', api.page);
 
-app.listen(3000);
+    app.use('/kontrolpanel', api.authenticate, express.static('admin'));
+
+    app.listen(3000);
+    console.log('Listening on port 3000');
+}).catch((err) => {
+    console.log(err);
+});

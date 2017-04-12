@@ -1,1 +1,27 @@
-Hold
+<h1>{{document.subtitle}}</h1>
+<table class="table" ng-repeat="item in document.classes">
+    <thead>
+        <tr>
+            <td colspan="2">{{item.signUpInstructions}}</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="class in item.classes">
+            <td class="day_column">{{class.day}}</td>
+            <td>
+                <table>
+                    <tbody>
+                        <tr ng-repeat="group in class.groups">
+                            <td class="group_space">{{group.space}}<br />{{group.time}}</td>
+                            <td class="group_prices">
+                                <ul>
+                                    <li ng-repeat="price in group.prices">{{price.dates}}<br />{{price.price}}</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
